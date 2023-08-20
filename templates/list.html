@@ -1,0 +1,17 @@
+<div class="main">
+ 
+    {% for data in dataset %}
+ 
+    {{ data.name }}<br/>
+    {{ data.phone }}<br/>
+    <a href="update/{{data.id}}">update</a>
+    <a href="delete/{{data.id}}">delete</a>
+    <hr/>
+    {% endfor %}
+    
+</div>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit">
+</form>
