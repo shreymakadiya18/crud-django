@@ -1,15 +1,14 @@
 {
     "builds": [
       {
-        "src": "crud-django/wsgi.py",
-        "use": "@vercel/python",
-          "config":{"maxLambdaSize":"15mb","runtime":"python3.9"}
+        "src": "crud/wsgi.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "crud-django/wsgi.py"
+        "dest": "crud/wsgi.py"
       }
     ]
 }
