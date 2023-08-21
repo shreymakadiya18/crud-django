@@ -81,15 +81,27 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'URL': 'postgresql://postgres:ntgSKtvU4J8pBsiZjj83@containers-us-west-176.railway.app:5993/railway',
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'ntgSKtvU4J8pBsiZjj83',
+#         'HOST': 'containers-us-west-176.railway.app',
+#         'PORT': 5993,
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:ntgSKtvU4J8pBsiZjj83@containers-us-west-176.railway.app:5993/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'ntgSKtvU4J8pBsiZjj83',
-        'HOST': 'containers-us-west-176.railway.app',
-        'PORT': 5993,
+        'URL': os.getenv('POSTGRES_URL'),
+        'NAME': os.getenv('PGNAME'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT),
     }
 }
 
