@@ -74,10 +74,22 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:ntgSKtvU4J8pBsiZjj83@containers-us-west-176.railway.app:5993/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ntgSKtvU4J8pBsiZjj83',
+        'HOST': 'containers-us-west-176.railway.app',
+        'PORT': 5993,
     }
 }
 
